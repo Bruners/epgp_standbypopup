@@ -1,0 +1,8 @@
+## Interface: 30300
+## Title: epgp standby popup
+## Author: Bruners
+## Version: 1.0
+## Note: epgp standby popup
+## X-Email: bruners[@]gmail.com
+
+standby.lua
