@@ -33,7 +33,6 @@ function f:ButtonClick()
 end
 
 f:Hide()
-f:Show()
 f:SetWidth(350)
 f:SetHeight(120)
 f:SetPoint("CENTER")
