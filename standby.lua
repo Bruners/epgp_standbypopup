@@ -97,7 +97,7 @@ close:SetHeight(20)
 close:SetWidth(140)
 close:SetPoint("LEFT", addme, "RIGHT", 10, 0)
 close:SetText(TEXT_CLOSE)
-close:SetScript("OnClick", function() f:Hide(); ReloadUI(); end )
+close:SetScript("OnClick", function() f:Hide() end )
 
 f.close = close
 
