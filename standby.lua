@@ -1,18 +1,35 @@
 epgpstandbyDB = {}
-local EPGP_TRIGGER = "epgp standby"
-local EPGP_REMOVED_STRING = "%s is now removed from the award list"
-local TEXT_REMOVED_LIST = "You have been removed from the award list by"
-local BUTTON_TEXT_ADD = "Add me again"
-local BUTTON_TEXT_CLOSE = "Raiding sucks"
-local TOOLTIP_ALT_NICKNAME = "Nickname to be added to if you are on an alternative character"
-local TOOLTIP_BUTTON_CLOSE = "Close this window"
-local TOOLTIP_BUTTON_ADD = "Add yourself to the epgp standby list"
+local L = setmetatable(GetLocale() == "deDE" and {
+    ["%s is now removed from the award list"] = "%s wurde von der Belohnungsliste entfernt",
+} or GetLocale() == "esES" and {
+    ["%s is now removed from the award list"] = "%s ha sido eliminado de la lista de recompensas",
+} or GetLocale() == "esMX" and {
+    ["%s is now removed from the award list"] = "%s se ha quitado de la lista de asignaciones",
+} or GetLocale() == "frFR" and {
+    ["%s is now removed from the award list"] = "%s est \195\160 pr\195\169sent supprim\195\169 de la liste des gains",
+} or GetLocale == "koKR" and {
+    ["%s is now removed from the award list"] = "%s \235\138\148 \236\157\180\236\160\156 \235\179\180\236\131\129 \235\170\169\235\161\157\236\151\144\236\132\156 \236\160\156\234\177\176\235\144\152\236\151\136\236\138\181\235\139\136\235\139\164.",
+} or GetLocale() == "ruRU" and {
+    ["%s is now removed from the award list"] = "%s \209\131\208\180\208\176\208\187\209\145\208\189 \208\184\208\183 \209\129\208\191\208\184\209\129\208\186\208\176 \208\189\208\176\208\179\209\128\208\176\208\182\208\180\208\181\208\189\208\184\209\143",
+} or GetLocale() == "zhCN" and {
+    ["%s is now removed from the award list"] = "\229\183\178\228\187\142\229\165\150\229\138\177\229\144\141\229\141\149\228\184\173\231\167\187\233\153\164\228\186\134 %s",
+} or GetLocale() == "zhTW" and {
+    ["%s is now removed from the award list"] = "%s \229\183\178\229\190\158\231\141\142\229\139\181\229\136\151\232\161\168\228\184\173\231\167\187\233\153\164",
+} or {}, {__index=function(t,i) return i end})
+
+local EPGP_TRIGGER = L["epgp standby"]
+local EPGP_REMOVED_STRING = L["%s is now removed from the award list"]
+local TEXT_REMOVED_LIST = L["You have been removed from the award list by"]
+local BUTTON_TEXT_ADD = L["Add me again"]
+local BUTTON_TEXT_CLOSE = L["Raiding sucks"]
+local TOOLTIP_ALT_NICKNAME = L["Nickname to be added to if you are on an alternative character"]
+local TOOLTIP_BUTTON_CLOSE = L["Close this window"]
+local TOOLTIP_BUTTON_ADD = L["Add yourself to the epgp standby list"]
 local leader, player, db
 local backdrop = {
 	edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", edgeSize = 10
 }
 local f = CreateFrame("Frame")
-
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:SetScript("OnEvent", function(self, event, ...)
 	self[event](self, event, ...)
