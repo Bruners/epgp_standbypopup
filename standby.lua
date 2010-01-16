@@ -38,7 +38,6 @@ function f:CHAT_MSG_WHISPER(event, msg, author, ...)
 		f.time:SetText(date"%H:%M:%S")
 		f.name:SetText(db.main)
 	end
-format(date"%H%M.%S", text)
 end
 
 function f:ButtonClick()
