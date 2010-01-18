@@ -156,3 +156,9 @@ name:SetScript("OnEnter", ShowTooltip)
 name:SetScript("OnLeave", HideTooltip)
 
 f.name = name
+
+SlashCmdList["EPGPSTANDBY"] = function()
+	return f:CHAT_MSG_WHISPER(self, string.format(EPGP_REMOVED_STRING, player), player)
+end
+
+SLASH_EPGPSTANDBY1 = "/epgpstandby"
