@@ -1,7 +1,7 @@
 ## Interface: 30300
 ## Title: epgp standby popup
 ## Author: Bruners
-## Version: 1.3
+## Version: 1.3.1
 ## Notes: Popup for when you are removed from the award list
 ## X-Email: bruners[@]gmail.com
 ## Savedvariables: epgpstandbyDB
